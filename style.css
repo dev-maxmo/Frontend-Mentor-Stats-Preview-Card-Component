@@ -1,0 +1,132 @@
+@import url(/_variables.css);
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--veryDarkBlue);
+    display: grid;
+    place-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.grid-section {
+    width: 70vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left-column {
+    background-color: var(--darkDesaturatedBlue);
+    padding: 60px;
+    border-radius: 10px 0 0 10px;
+}
+
+h1, h2 {
+    color: var(--white);
+}
+
+.main-heading {
+    font-size: 30px;
+}
+
+.stats-heading {
+    font-size: 20px;
+}
+
+.paragraph {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--slightlyTransparentWhiteMain);
+    margin: 25px 0;
+}
+
+.stats-container {
+    margin-top: 60px;
+    display: flex;
+}
+
+.stats-container span {
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
+    color: var(--slightlyTransparentWhiteStats);
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.stats-container span:not(last-child) {
+    margin-right: 40px;
+}
+
+.right-column {
+    background-image: url(/images/image-header-desktop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0 10px 10px 0;
+}
+
+.layer {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--softViolet);
+    opacity: .5;
+    border-radius: 0 10px 10px 0;
+}
+
+/* ---------- Breakpoint Mobile Screen ---------- */
+@media screen and (max-width: 400px) {
+    
+    body {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: var(--darkDesaturatedBlue);
+    }
+
+    .grid-section {
+        width: 100%;
+        grid-template-columns: auto;
+        grid-template-rows: 280px 1fr;
+    }
+
+    .left-column {
+        grid-row: 2;
+        padding: 40px;
+        border-radius: 0;
+    }
+
+    .right-column {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .layer {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .stats-container div {
+        text-align: center;
+    }
+
+    .stats-container span:not(last-child) {
+        margin-right: 0;
+    }
+
+    .stats-container div:nth-child(2) {
+        margin: 30px 0;
+    }
+
+}
